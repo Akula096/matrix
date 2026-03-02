@@ -8,7 +8,7 @@ jobs:
         strategy:
             matrix:
                 os: [ubuntu-latest, windows]
-                images: [nginx, httpd]
+                images: [hello-world, nginx:latest]
         runs-on: ${{ matrix.os}}
         steps:
            - name: deploy the image
