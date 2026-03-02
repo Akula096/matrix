@@ -8,4 +8,6 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: github contetx
-              run: echo ${{github.string}}
+              env:
+                GITHUB_CONTEXT: ${{ toJson(github)}}
+              run: echo "$GITHUB_CONTEXT"
