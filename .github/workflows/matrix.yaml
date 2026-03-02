@@ -6,9 +6,11 @@ on:
 jobs:
     build:
         strategy:
+            max-parallel: 2
             matrix:
                 os: [ubuntu-latest, windows]
-                images: [hello-world, nginx:latest]
+                images: [hello-world, alpine]
+                
         runs-on: ${{ matrix.os}}
         steps:
            - name: deploy the image
